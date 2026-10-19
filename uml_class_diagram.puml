@@ -1,0 +1,152 @@
+@startuml
+' Hospital Management System - UML class diagram (PlantUML source)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype polyline
+skinparam class {
+  BackgroundColor White
+  BorderColor #2c3e50
+}
+hide circle
+
+abstract class Person {
+  - personId: String
+  - fullName: String
+  - dateOfBirth: Date
+  - gender: String
+  - phone: String
+  - address: String
+  --
+  + updateContact(): void
+}
+
+class Patient {
+  - patientId: String
+  - bloodGroup: String
+  - registrationDate: Date
+  --
+  + register(): void
+  + viewHistory(): void
+}
+
+class Doctor {
+  - doctorId: String
+  - specialization: String
+  - licenseNumber: String
+  --
+  + diagnose(): void
+  + prescribe(): Prescription
+  + orderLabTest(): LabTest
+}
+
+class Nurse {
+  - nurseId: String
+  - shift: String
+  --
+  + recordVitals(): void
+  + assistDoctor(): void
+}
+
+class Department {
+  - departmentId: String
+  - name: String
+  - location: String
+  --
+  + addDoctor(): void
+  + listStaff(): void
+}
+
+class Appointment {
+  - appointmentId: String
+  - dateTime: DateTime
+  - status: String
+  - reason: String
+  - diagnosis: String
+  --
+  + schedule(): void
+  + cancel(): void
+  + reschedule(): void
+}
+
+class Prescription {
+  - prescriptionId: String
+  - issueDate: Date
+  - notes: String
+  --
+  + addItem(): void
+  + markDispensed(): void
+}
+
+class PrescriptionItem {
+  - dosage: String
+  - frequency: String
+  - durationDays: int
+  --
+  + calculateQuantity(): int
+}
+
+class Medicine {
+  - medicineId: String
+  - name: String
+  - form: String
+  - unitPrice: double
+  --
+  + checkAvailability(): boolean
+}
+
+class LabTest {
+  - testId: String
+  - testType: String
+  - requestDate: Date
+  - result: String
+  - status: String
+  --
+  + recordResult(): void
+}
+
+class Admission {
+  - admissionId: String
+  - admitDate: Date
+  - dischargeDate: Date
+  - status: String
+  --
+  + admit(): void
+  + discharge(): void
+}
+
+class Room {
+  - roomNumber: String
+  - type: String
+  - capacity: int
+  - isAvailable: boolean
+  --
+  + assign(): void
+  + release(): void
+}
+
+class Bill {
+  - billId: String
+  - issueDate: Date
+  - totalAmount: double
+  - paymentStatus: String
+  --
+  + generate(): void
+  + recordPayment(): void
+}
+
+Person <|-- Patient
+Person <|-- Doctor
+Person <|-- Nurse
+Department "1" o-- "1..*" Doctor : employs >
+Department "1" o-- "0..*" Nurse : staffs >
+Patient "1" -- "0..*" Appointment : books >
+Doctor "1" -- "0..*" Appointment : attends >
+Appointment "1" -- "0..*" LabTest : requires >
+Appointment "1" -- "0..1" Prescription : results in >
+Prescription "1" *-- "1..*" PrescriptionItem : contains >
+PrescriptionItem "0..*" -- "1" Medicine : refers to >
+Patient "1" -- "0..*" Admission : is admitted >
+Admission "0..*" -- "1" Room : assigned to >
+Doctor "1" -- "0..*" Admission : supervises >
+Patient "1" -- "0..*" Bill : is billed >
+@enduml

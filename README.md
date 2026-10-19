@@ -1,6 +1,6 @@
 # Hospital Management System (HMS) - UML Class Diagram
 
-UML Class Diagram Modelling assignment, Kigali Independent University (ULK), Master of Software Engineering (MSSE).
+UML Class Diagram Modelling assignment, Kigali Independent University (ULK), Undergraduate data science department.
 Instructor: Eric Maniraguha. Deadline: Tuesday, 20 October 2026, 8:30 AM.
 
 ## Group members

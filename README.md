@@ -7,8 +7,8 @@ Instructor: Eric Maniraguha. Deadline: Tuesday, 20 October 2026, 8:30 AM.
 
 | Name | Student ID |
 |---|---|
-| Aser | 202652088 |
-| [Partner full name] | [Partner student ID] |
+| DAUGLA DOURAH NGUEMADJIMBAYE| 202512707 |
+
 
 ## Business idea
 

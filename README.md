@@ -7,7 +7,7 @@ Instructor: Eric Maniraguha. Deadline: Tuesday, 20 October 2026, 8:30 AM.
 
 | Name | Student ID |
 |---|---|
-| DAUGLA DOURAH NGUEMADJIMBAYE| 202512707 |
+| DAUGLA DOURAH NGUEMADJIMBAYE | 202512707 |
 
 
 ## Business idea

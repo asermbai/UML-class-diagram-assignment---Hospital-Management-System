@@ -20,7 +20,7 @@ diagram. Building the working application is **not** part of the assignment.
 
 Paper registers and disconnected files cause lost patient records, double-booked appointments, slow lab results,
 prescription errors, unclear room availability and inaccurate billing. The proposed system centralises this
-information in one consistent model.
+information in one consistent model. 
 
 ## Scope
 
